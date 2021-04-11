@@ -1,0 +1,14 @@
+.header {
+  background-color: $theme-accent;
+  padding: 15px 0;
+  margin-bottom: 20px;
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    color: $theme-light;
+    margin: 0;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+}

@@ -1,0 +1,37 @@
+.cell {
+  border: 1px solid $theme-light;
+  box-shadow: inset 0 0 0 1px rgba(black, 0.5);
+
+  &.light {
+    background-color: $theme-accent;
+  }
+
+  &.highlight {
+    background-color: $highlight-color;
+  }
+
+  &.selected {
+    box-shadow: inset 0 0 0 3px $highlight-color;
+  }
+
+  &.king[data-player="dark"]::after,
+  &.king[data-player="light"]::after {
+    background-image: url("../images/king.png");
+    background-repeat: no-repeat;
+
+    background-position: center;
+    background-size: 85% 85%;
+  }
+
+  &[data-player="dark"] {
+    position: relative;
+
+    @include piece($player-dark);
+  }
+
+  &[data-player="light"] {
+    position: relative;
+
+    @include piece($player-light);
+  }
+}

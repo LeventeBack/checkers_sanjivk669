@@ -1,0 +1,15 @@
+.board {
+  display: grid;
+
+  --cell-size: 70px;
+
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+
+  @media (max-width: 600px) {
+    --cell-size: 60px;
+  }
+  width: 95%;
+  max-width: 600px;
+  margin: 0 auto;
+}
