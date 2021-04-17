@@ -32,3 +32,16 @@
     @include absolut-center;
   }
 }
+
+@mixin flex-center-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin hidden {
+  &.hidden {
+    display: none;
+  }
+}

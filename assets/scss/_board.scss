@@ -1,15 +1,70 @@
 .board {
+  width: 95%;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+
   display: grid;
-
   --cell-size: 70px;
-
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 1fr);
 
   @media (max-width: 600px) {
     --cell-size: 60px;
   }
-  width: 95%;
-  max-width: 600px;
-  margin: 0 auto;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(#000000, 0.6);
+    color: $theme-light;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    @include flex-center-column;
+    display: none;
+    padding: 0 15px;
+  }
+
+  &.waiting::after {
+    display: flex;
+    content: attr(data-after-text);
+    animation: dots 2s infinite;
+
+    @keyframes dots {
+      0% {
+        content: attr(data-after-text);
+      }
+      40% {
+        content: attr(data-after-text) ".";
+      }
+      66% {
+        content: attr(data-after-text) "..";
+      }
+      100% {
+        content: attr(data-after-text)"...";
+      }
+    }
+  }
+
+  &.ended::after {
+    display: flex;
+    content: attr(data-after-text);
+    font-size: 2.4rem;
+    text-transform: capitalize;
+  }
+  &.light::after {
+    color: $player-light;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+  &.dark::after {
+    color: $player-dark;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+      1px 1px 0 #fff;
+  }
 }

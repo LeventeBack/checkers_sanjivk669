@@ -1,0 +1,22 @@
+.message {
+  position: fixed;
+  z-index: 10;
+  background-color: $theme-accent;
+  color: $theme-light;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  font-size: 1.2rem;
+  text-align: center;
+  box-shadow: 0 0 5px black;
+  animation: cssAnimation 0s 3s forwards;
+}
+@keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    padding: 0;
+  }
+}

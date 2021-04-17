@@ -1,0 +1,48 @@
+.status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+  width: 95%;
+  margin-bottom: 20px;
+
+  &__turn {
+    color: $theme-light;
+    text-align: center;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+
+    & .nextplayer {
+      text-transform: uppercase;
+      font-weight: bold;
+
+      &.light {
+        color: $player-light;
+      }
+      &.dark {
+        color: $player-dark;
+      }
+    }
+  }
+
+  &__roomid {
+    color: $theme-light;
+    font-size: 1.2rem;
+  }
+
+  &__restart {
+    max-width: 350px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: $theme-accent;
+    color: $theme-light;
+    border: 2px solid $theme-light;
+    cursor: pointer;
+    outline: none;
+
+    &:focus,
+    &:hover {
+      box-shadow: 0 0 15px rgba($theme-light, 0.8);
+    }
+  }
+}

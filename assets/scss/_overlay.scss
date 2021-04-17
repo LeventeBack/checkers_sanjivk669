@@ -1,0 +1,45 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(black, 0.7);
+  @include flex-center-column;
+  @include hidden;
+
+  &__button {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 50px;
+    padding: 10px;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    background-color: $theme-accent;
+    color: $theme-light;
+    border: 2px solid $theme-light;
+    cursor: pointer;
+    outline: none;
+
+    &:focus,
+    &:hover {
+      box-shadow: 0 0 15px rgba($theme-light, 0.8);
+    }
+  }
+
+  &__form {
+    max-width: 350px;
+    width: 100%;
+  }
+
+  &__input {
+    font-weight: bold;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    outline: none;
+    border-radius: 15px;
+  }
+}
